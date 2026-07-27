@@ -1,7 +1,5 @@
 /**
- * Módulo de Servicio de Búsqueda de Vuelos Chilenos
- * Desarrollado en la rama: feature/busqueda-vuelos
- * Precios expresados en Pesos Chilenos (CLP)
+  // Módulo de búsqueda de vuelos para Chile en CLP
  */
 
 class FlightService {
