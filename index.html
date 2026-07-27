@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wanderlust Chile - Plataforma interactiva de reserva de vuelos, hoteles y paquetes turísticos en Chile con tarifas en CLP y políticas actualizadas.">
+    <title>Wanderlust Chile | Vuelos y Paquetes Turísticos Chilenos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Policy Alert Banner (Requisitos dinámicos de viaje Chile) -->
+    <div id="policy-banner" class="policy-banner">
+        <div class="banner-content">
+            <span class="badge badge-warning">Actualización Normativa Chile 2026</span>
+            <p><strong>Atención viajeros:</strong> Se han actualizado las regulaciones de ingreso a Parques Nacionales CONAF e Isla de Pascua (Rapa Nui). <a href="#policy-info" id="policy-link">Ver detalles de la regulación</a></p>
+        </div>
+        <button id="close-banner" aria-label="Cerrar aviso">&times;</button>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-icon">🏔️</span>
+                <span class="logo-text">Wanderlust <span>Chile</span></span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#vuelos" class="nav-link active">Vuelos Chilenos</a>
+                <a href="#hoteles" class="nav-link">Hoteles & Lodges</a>
+                <a href="#paquetes" class="nav-link">Paquetes Turísticos</a>
+                <a href="#mis-reservas" class="nav-link">Mis Reservas</a>
+            </nav>
+            <div class="nav-actions">
+                <span class="branch-tag">Branch: <code>main</code></span>
+                <button class="btn btn-outline" id="theme-toggle">🌙 Modo Oscuro</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <h1>Explora Chile de Norte a Sur</h1>
+            <p class="hero-subtitle">Búsqueda interactiva y reserva en línea de vuelos, hospedajes y tours en San Pedro de Atacama, Torres del Paine, Rapa Nui y más, con precios en Pesos Chilenos (CLP).</p>
+            
+            <!-- Booking Search Widget -->
+            <div class="search-card">
+                <div class="search-tabs">
+                    <button class="tab-btn active" data-tab="flights">✈️ Vuelos Nacionales</button>
+                    <button class="tab-btn" data-tab="hotels">🏨 Hoteles y Lodges</button>
+                    <button class="tab-btn" data-tab="packages">🌴 Paquetes Chilenos</button>
+                </div>
+
+                <form id="booking-search-form" class="search-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="origin">Origen (Chile)</label>
+                            <input type="text" id="origin" placeholder="Ciudad o Aeropuerto" required value="Santiago (SCL)">
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Destino (Chile)</label>
+                            <input type="text" id="destination" placeholder="¿A qué destino viajas?" required value="San Pedro de Atacama (CJC)">
+                        </div>
+                        <div class="form-group">
+                            <label for="departure-date">Fecha de Ida</label>
+                            <input type="date" id="departure-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="return-date">Fecha de Vuelta</label>
+                            <input type="date" id="return-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers">Pasajeros</label>
+                            <select id="passengers">
+                                <option value="1">1 Adulto</option>
+                                <option value="2" selected>2 Adultos</option>
+                                <option value="3">2 Adultos + 1 Niño</option>
+                                <option value="4">Familia (4+)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="flexible-dates" checked> Fechas flexibles (+/- 3 días)
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-lg">🔍 Buscar en CLP ($)</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Results & Demo Area -->
+    <main class="container main-content">
+        <div class="section-header">
+            <h2 id="results-title">Vuelos Disponibles en Chile</h2>
+            <p>Tarifas garantizadas en CLP ($) con flexibilidad de cambio y políticas CONAF 2026 aplicadas.</p>
+        </div>
+
+        <div id="results-container" class="results-grid">
+            <!-- Dynamic Results -->
+        </div>
+
+        <!-- Section GitHub Collaboration Highlights -->
+        <section class="collab-section card">
+            <h3>📌 Estado de Integración del Proyecto (Entorno GitHub)</h3>
+            <div class="collab-grid">
+                <div class="collab-card">
+                    <span class="status-indicator status-green"></span>
+                    <h4>Módulo de Vuelos Nacionales</h4>
+                    <p>Desarrollado en la rama <code>feature/busqueda-vuelos</code>. PR <code>#14</code> aprobado y fusionado en <code>main</code> con conversión a CLP ($).</p>
+                </div>
+                <div class="collab-card">
+                    <span class="status-indicator status-orange"></span>
+                    <h4>Módulo de Lodges y Hoteles</h4>
+                    <p>En discusión mediante Issue <code>#12: Integración API Booking Lodges Chilenos</code>. Solucionando latencia en reservas de Torres del Paine.</p>
+                </div>
+                <div class="collab-card">
+                    <span class="status-indicator status-blue"></span>
+                    <h4>Políticas CONAF y Rapa Nui</h4>
+                    <p>Actualizadas en PR <code>#15</code> para validar pases de ingreso a parques nacionales y declaración Única Rapa Nui.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Wanderlust Chile Travel - Proyecto de Programación Web II. Trabajo Colaborativo en GitHub con Precios y Destinos Chilenos.</p>
+        </div>
+    </footer>
+
+    <script src="api/flights.js"></script>
+    <script src="api/hotels.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
